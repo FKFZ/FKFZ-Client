@@ -1,0 +1,103 @@
+﻿<Window x:Class="FKFZ.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Window1" Height="300" Width="300" Loaded="Window_Loaded">
+    <Window.Resources>
+        <SolidColorBrush x:Key="TextBrush1">White</SolidColorBrush>
+        <SolidColorBrush x:Key="TextBrush2">DarkGray</SolidColorBrush>
+        <Storyboard x:Key="Storyboard1" Completed="Storyboard1_OnCompleted" >
+            <ThicknessAnimation Storyboard.TargetName="GridPrev" Storyboard.TargetProperty="Margin" From="0,0,0,0" To="0,-80,0,0" FillBehavior="Stop" Duration="0:0:2"/>
+            <DoubleAnimation Storyboard.TargetName="GridPrev" Storyboard.TargetProperty="Opacity" From="1" To="0" FillBehavior="Stop" Duration="0:0:2"/>
+            <ColorAnimation Storyboard.TargetName="TextBlockNow1" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"  To="{Binding Source={StaticResource TextBrush2}, Path=Color}" FillBehavior="Stop" Duration="0:0:2" />
+            <ColorAnimation Storyboard.TargetName="TextBlockNow2" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"  To="{Binding Source={StaticResource TextBrush2}, Path=Color}" FillBehavior="Stop" Duration="0:0:2" />
+            <ColorAnimation Storyboard.TargetName="TextBlockNext1" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"  To="{Binding Source={StaticResource TextBrush1}, Path=Color}" FillBehavior="Stop" Duration="0:0:2" />
+            <ColorAnimation Storyboard.TargetName="TextBlockNext2" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"  To="{Binding Source={StaticResource TextBrush1}, Path=Color}" FillBehavior="Stop" Duration="0:0:2" />
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="TextBlockNow1" Storyboard.TargetProperty="(TextElement.FontWeight)" FillBehavior="Stop" Duration="0:0:2" >
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <FontWeight>Normal</FontWeight>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="TextBlockNow2" Storyboard.TargetProperty="(TextElement.FontWeight)" FillBehavior="Stop" Duration="0:0:2" >
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <FontWeight>Normal</FontWeight>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="TextBlockNext1" Storyboard.TargetProperty="(TextElement.FontWeight)" FillBehavior="Stop" Duration="0:0:2" >
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <FontWeight>Bold</FontWeight>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="TextBlockNext2" Storyboard.TargetProperty="(TextElement.FontWeight)" FillBehavior="Stop" Duration="0:0:2" >
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <FontWeight>Bold</FontWeight>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button  Content="  重来  " Click="ButtonBase_OnClick" Name="ButtonRepeat" IsEnabled="False" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <Grid Height="80" Name="GridPrev" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="1" Text="{Binding ent}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="DarkGray" FontWeight="Normal" ></TextBlock>
+                <TextBlock Grid.Row="2" Text="{Binding chs}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="DarkGray" FontWeight="Normal" ></TextBlock>
+            </Grid>
+            <Grid Height="80" Name="GridNow" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Name="TextBlockNow1" Grid.Row="1" Text="{Binding ent}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold" ></TextBlock>
+                <TextBlock Name="TextBlockNow2" Grid.Row="2" Text="{Binding chs}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold" ></TextBlock>
+            </Grid>
+            <Grid Height="80" Name="GridNext" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="1" Name="TextBlockNext1" Text="{Binding ent}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="DarkGray" FontWeight="Normal" ></TextBlock>
+                <TextBlock Grid.Row="2" Name="TextBlockNext2" Text="{Binding chs}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="DarkGray" FontWeight="Normal" ></TextBlock>
+            </Grid>
+            <ItemsControl Name="ItemsControl1">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Height="80">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="10"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="1" Text="{Binding ent}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="DarkGray"></TextBlock>
+                            <TextBlock Grid.Row="2" Text="{Binding chs}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="DarkGray"></TextBlock>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+    </Grid>
+</Window>

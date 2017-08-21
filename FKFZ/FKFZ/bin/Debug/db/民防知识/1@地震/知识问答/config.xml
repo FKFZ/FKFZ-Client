@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<questions>
+	<question>
+		<id>0</id>
+		<score>10</score>
+		<title>1、当我们乘坐公共汽车时，如果发生地震，我们要（）抓紧扶手，迅速蹲下，地震过后再下车抓紧扶手，迅速蹲下，地震过后再下车抓紧扶手，迅速蹲下，地震过后再下车</title>
+		<option id="0">A、从窗户往外跳抓紧扶手，迅速蹲下，地震过后再下车抓紧扶手，迅速蹲下，地震过后再下车抓紧扶手，迅速蹲下，地震过后再下车</option>
+		<option id="1">B、迅速从车名下车</option>
+		<option id="2">C、抓紧扶手，迅速蹲下，地震过后再下车</option>
+		<answerid>2</answerid>
+	</question>
+	<question>
+		<id>1</id>
+		<score>10</score>
+		<title>2、当我们乘坐公共汽车时，如果发生地震，我们要（）</title>
+		<option id="0">A、从窗户往外跳</option>
+		<option id="1">B、迅速从车名下车</option>
+		<option id="2">C、抓紧扶手，迅速蹲下，地震过后再下车</option>
+		<answerid>2</answerid>
+	</question>
+	<question>
+		<id>2</id>
+		<score>10</score>
+		<title>3、当我们乘坐公共汽车时，如果发生地震，我们要（）</title>
+		<option id="0">A、从窗户往外跳</option>
+		<option id="1">B、迅速从车名下车</option>
+		<option id="2">C、避开高大建筑物或构筑物</option>
+		<option id="3">D、抓紧扶手，迅速蹲下，地震过后再下车</option>
+		<answerid>1</answerid>
+	</question>
+	<question>
+		<id>3</id>
+		<score>10</score>
+		<title>4、当我们乘坐公共汽车时，如果发生地震，我们要（）</title>
+		<option id="0">A、从窗户往外跳</option>
+		<option id="1">B、迅速从车名下车</option>
+		<option id="2">C、抓紧扶手，迅速蹲下，地震过后再下车</option>
+		<answerid>2</answerid>
+	</question>
+	<question>
+		<id>4</id>
+		<score>10</score>
+		<title>5、当我们乘坐公共汽车时，如果发生地震，我们要（）</title>
+		<option id="0">A、从窗户往外跳</option>
+		<option id="1">B、迅速从车名下车</option>
+		<option id="2">C、抓紧扶手，迅速蹲下，地震过后再下车</option>
+		<option id="3">D、避开危险物、高耸或悬挂物</option>
+		<answerid>2</answerid>
+	</question>
+</questions>

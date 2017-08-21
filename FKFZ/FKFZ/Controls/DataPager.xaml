@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="FKFZ.Controls.DataPager"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="80" d:DesignWidth="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.8*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button Name="btnPrev" Content="上一页" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center" Width="75" Height="30" Click="btnPrev_Click" FontSize="16"/>
+        <Button Name="btnNext" Content="下一页" HorizontalAlignment="Center" Grid.Column="3" VerticalAlignment="Center" Width="75"  Height="30" Click="btnNext_Click" FontSize="16"/>
+        <TextBlock Name="tbInfo" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="17"/>
+        <Button Name="btnFirst" Content="首页" HorizontalAlignment="Center" Grid.Column="0" VerticalAlignment="Center" Width="75"  Height="30" Click="btnFirst_Click" FontSize="16"/>
+        <Button Name="btnLast" Content="末页" HorizontalAlignment="Center" Grid.Column="4" VerticalAlignment="Center" Width="75"  Height="30" Click="btnLast_Click" FontSize="16"/>
+
+    </Grid>
+</UserControl>

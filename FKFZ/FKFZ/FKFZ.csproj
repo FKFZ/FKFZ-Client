@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{02295537-5443-462A-9C04-CC5B38A85C40}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FKFZ</RootNamespace>
+    <AssemblyName>FKFZ</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Core, Version=2.1.134.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=x86">
+      <HintPath>..\packages\Vlc.DotNet.Core.2.1.134\lib\net40\x86\Vlc.DotNet.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Core.Interops">
+      <HintPath>..\packages\Vlc.DotNet.Core.Interops.2.1.134\lib\net40\x86\Vlc.DotNet.Core.Interops.dll</HintPath>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Forms, Version=2.1.134.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=x86">
+      <HintPath>..\packages\Vlc.DotNet.Forms.2.1.134\lib\net40\x86\Vlc.DotNet.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Wpf, Version=2.1.134.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=x86">
+      <HintPath>..\packages\Vlc.DotNet.Wpf.2.1.134\lib\net40\x86\Vlc.DotNet.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controls\DataPager.xaml.cs">
+      <DependentUpon>DataPager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LoadControl.xaml.cs">
+      <DependentUpon>LoadControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MarqueeText.xaml.cs">
+      <DependentUpon>MarqueeText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PicText.xaml.cs">
+      <DependentUpon>PicText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\QuestionCtrl.xaml.cs">
+      <DependentUpon>QuestionCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Radio3Btn.cs" />
+    <Compile Include="Controls\RollingImageCtrl.xaml.cs">
+      <DependentUpon>RollingImageCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ScrollText.xaml.cs">
+      <DependentUpon>ScrollText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SliderProgressBar.xaml.cs">
+      <DependentUpon>SliderProgressBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TopScrollText.xaml.cs">
+      <DependentUpon>TopScrollText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Indicator.xaml.cs">
+      <DependentUpon>Indicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\StateConverter.cs" />
+    <Compile Include="Converters\TrimmedTextBlockVisibilityConverter.cs" />
+    <Compile Include="Converters\ConverterBindableBinding .cs" />
+    <Compile Include="Converters\MultiValueConverterAdapter.cs" />
+    <Compile Include="Converters\OptionToBoolConverter.cs" />
+    <Compile Include="Converters\SelectStateConverter.cs" />
+    <Compile Include="Converters\WidthHeightConverter.cs" />
+    <Compile Include="DataStore\LocalLoader.cs" />
+    <Compile Include="Log\LogFactory.cs" />
+    <Compile Include="Log\LogImplement.cs" />
+    <Compile Include="Log\RecordLog.cs" />
+    <Compile Include="Models\LrcInfo.cs" />
+    <Compile Include="Models\Subject.cs" />
+    <Compile Include="Models\Medias.cs" />
+    <Compile Include="Pages\HomeFrame.xaml.cs">
+      <DependentUpon>HomeFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\InPage.xaml.cs">
+      <DependentUpon>InPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MutiPage.xaml.cs">
+      <DependentUpon>MutiPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QAPage.xaml.cs">
+      <DependentUpon>QAPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\VideoPage.xaml.cs">
+      <DependentUpon>VideoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MutiPage2.xaml.cs">
+      <DependentUpon>MutiPage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QAPage2.xaml.cs">
+      <DependentUpon>QAPage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MEVideoPage.xaml.cs">
+      <DependentUpon>MEVideoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QAPage3.xaml.cs">
+      <DependentUpon>QAPage3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Transcation\CenterConverter.cs" />
+    <Compile Include="Transcation\HeightConverter.cs" />
+    <Compile Include="Transcation\InvertConverter.cs" />
+    <Compile Include="Transcation\PageTransition.xaml.cs">
+      <DependentUpon>PageTransition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Transcation\WidthConverter.cs" />
+    <Compile Include="Utils\AppDB.cs" />
+    <Compile Include="Utils\Constant.cs" />
+    <Compile Include="Utils\ControlAttachProperty.cs" />
+    <Compile Include="Utils\DirUtils.cs" />
+    <Compile Include="Utils\Helper.cs" />
+    <Compile Include="Utils\IniUtil.cs" />
+    <Compile Include="Utils\NotificationObject.cs" />
+    <Compile Include="Utils\PagePathUtils.cs" />
+    <Compile Include="Utils\Reverser.cs" />
+    <Compile Include="Utils\UIUtils.cs" />
+    <Compile Include="Utils\XmlUtils.cs" />
+    <Compile Include="ViewModel\QAViewModel.cs" />
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XmlModel\LinqUtils.cs" />
+    <Compile Include="XmlModel\MediaModel.cs" />
+    <Compile Include="XmlModel\QAModel.cs" />
+    <Compile Include="XmlModel\VideoModel.cs" />
+    <Page Include="Controls\DataPager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\LoadControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MarqueeText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PicText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\QuestionCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\RollingImageCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ScrollText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SliderProgressBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TopScrollText.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Indicator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Pages\HomeFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\InPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MutiPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\QAPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\VideoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MutiPage2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\QAPage2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\MEVideoPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\QAPage3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\BtnStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\TabStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\FontStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\ProgressStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\RadioBtnStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\ColorStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\RichTextBoxStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\SliderStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Transcation\PageTransition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="logWPF.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <Resource Include="Resources\FZCYJW.TTF" />
+    <Resource Include="Resources\FZDHTJW.TTF" />
+    <Resource Include="Resources\FZMHJW.TTF" />
+    <Resource Include="Resources\FZSHJW.TTF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skins\back.png" />
+    <Resource Include="Styles\skins\bg.png" />
+    <Resource Include="Styles\skins\btn2.png" />
+    <Resource Include="Styles\skins\btn_active.png" />
+    <Resource Include="Styles\skins\btn_back.png" />
+    <Resource Include="Styles\skins\btn_home.png" />
+    <Resource Include="Styles\skins\btn_normal.png" />
+    <Resource Include="Styles\skins\Group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skins\c_wd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skins\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skins\arr_left.png" />
+    <Resource Include="Styles\skins\arr_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skins\fklogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skins\home1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skins\audio1.png" />
+    <Resource Include="Styles\skins\audio2.png" />
+    <Resource Include="Styles\skins\audiobg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skins\nav_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skins\tab_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skins\app_title.png" />
+    <Resource Include="Styles\skins\btn_blue.png" />
+    <Resource Include="Styles\skins\btn_green.png" />
+    <Resource Include="Styles\skins\in_bgdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skins\bg_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skins\radio_box1.png" />
+    <Resource Include="Styles\skins\radio_box2.png" />
+    <Resource Include="Styles\skins\radio_box3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skins\btn_back2.png" />
+    <Resource Include="Styles\skins\btn_home2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skins\in_img1.png" />
+    <Resource Include="Styles\skins\in_img2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skins\score.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skins\clikin.png" />
+    <Resource Include="Styles\skins\loadbg.png" />
+    <Resource Include="Styles\skins\title_load.png" />
+    <Resource Include="Styles\skins\logo_load.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skins\trans.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skins\hand330.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skins\c_fk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skins\c_dz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skins\btnArrL.png" />
+    <Resource Include="Styles\skins\btnArrR.png" />
+    <Resource Include="Styles\skins\btn_next.png" />
+    <Resource Include="Styles\skins\btn_pre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\skins\backicon2.png" />
+    <Resource Include="Styles\skins\homeicon2.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

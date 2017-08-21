@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<videos>
+	<video Type = "all">
+		<id>0</id>
+		<title>地震灾害总体介绍</title>
+		<path>国庆请将此替换为总视频.wmv</path>
+		<cover>总视频.jpg</cover>
+	</video>
+	<video Type = "sub">
+		<id>1</id>
+		<title>地震波</title>
+		<path>地震波.wmv</path>
+		<cover>1.jpeg</cover>
+	</video>
+</videos>

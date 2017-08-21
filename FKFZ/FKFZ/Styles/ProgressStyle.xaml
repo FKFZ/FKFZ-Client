@@ -1,0 +1,122 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <!--ProgressBar Style-->
+    <Style TargetType="ProgressBar" x:Key="SimpleProgressBar">
+        <Style.Resources>
+            <LinearGradientBrush x:Key="ControlBorderBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#E6E6E6"/>
+                <GradientStop Color="#E6E6E6" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="FocusBorderBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#007ACC"/>
+                <GradientStop Color="#007ACC" Offset="1"/>
+            </LinearGradientBrush>
+        </Style.Resources>
+        <Setter Property="Background" Value="{StaticResource ControlBorderBrush}" />
+        <Setter Property="Maximum" Value="1" />
+        <Setter Property="Value" Value="0" />
+        <Setter Property="Height" Value="7" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Foreground" Value="{StaticResource FocusBorderBrush}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Grid x:Name="Root" >
+                        <Border x:Name="PART_Track" Background="{TemplateBinding Background}" 
+                                CornerRadius="2"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        <Border  x:Name="PART_Indicator" HorizontalAlignment="Left" Background="{TemplateBinding Foreground}" 
+                                CornerRadius="2"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Orientation" Value="Vertical">
+                            <Setter Property="LayoutTransform" TargetName="Root" >
+                                <Setter.Value>
+                                    <RotateTransform Angle="-90" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--slider ProgressBar Style-->
+    <Style TargetType="ProgressBar" x:Key="SliderProgressBar">
+        <Style.Resources>
+            <LinearGradientBrush x:Key="ControlBorderBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#E6E6E6"/>
+                <GradientStop Color="#E6E6E6" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="FocusBorderBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#007ACC"/>
+                <GradientStop Color="#007ACC" Offset="1"/>
+            </LinearGradientBrush>
+        </Style.Resources>
+        <Setter Property="Background" Value="{StaticResource ControlBorderBrush}" />
+        <Setter Property="Maximum" Value="1" />
+        <Setter Property="Value" Value="0" />
+        <Setter Property="Height" Value="10" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Foreground" Value="{StaticResource FocusBorderBrush}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Grid x:Name="Root" >
+                        <Border x:Name="PART_Track" Background="{TemplateBinding Background}" 
+                                CornerRadius="2"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        <Border  x:Name="PART_Indicator" HorizontalAlignment="Left" Background="{TemplateBinding Foreground}" 
+                                CornerRadius="2"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        <Thumb x:Name="thumb" Height="15" ClipToBounds="False"
+                            BorderThickness="2" Width="55" Style="{StaticResource Pro_Thumb}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Orientation" Value="Vertical">
+                            <Setter Property="LayoutTransform" TargetName="Root" >
+                                <Setter.Value>
+                                    <RotateTransform Angle="-90" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="thumb" >                               
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Pro_Thumb" TargetType="Thumb">
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Thumb">
+                    <Grid MinHeight="20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.ColumnSpan="2" CornerRadius="4"  Background="{StaticResource STB}" Width="10">
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <LinearGradientBrush x:Key="STB"  StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0" Color="#FFD9D3E8"/>
+        <GradientStop Offset="1" Color="#dfdfdf"/>
+    </LinearGradientBrush>
+</ResourceDictionary>
