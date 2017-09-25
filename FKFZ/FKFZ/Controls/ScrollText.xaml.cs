@@ -117,7 +117,7 @@ namespace FKFZ.Controls
             mStoryboard = new Storyboard();
 
             double lenth = MeasureTextWidth(text.Text, text.FontSize, text.FontFamily.Source);
-            if (lenth < 150)
+            if (lenth < canva1.Width)//150
             {
                 textBlock1.SetValue(Canvas.LeftProperty, (canva1.Width - lenth) / 2);
                 return;
